@@ -8,8 +8,8 @@ const AgeRating = ({ data }) => {
   return (
     <SbEditable content={content} key={content._uid}>
       <main>
-        {/* <div Styles.agerating={[styles.movie, styles.test].join(' ')}> */}
-        <div className={styles.studio}>
+        {/* <div className={[styles.movie, styles.test].join(' ')}> */}
+        <div className={styles.ageraing}>
           <h1 className={styles.title}>
             {content.title}
           </h1>
