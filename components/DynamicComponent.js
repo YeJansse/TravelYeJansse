@@ -51,7 +51,8 @@ const Components = {
   'emailoptin':EmailOptin,
   'twocol':TwoCol,
   'title':Title,
-  'topmovies':TopMovies
+  'topmovies':TopMovies,
+  'agerating':Agerating
 }
 
 
