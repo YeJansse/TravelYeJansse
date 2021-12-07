@@ -26,6 +26,18 @@
       font-weight: 700;
     }
   }
+  .ageratinglist {
+    display: flex;
+    margin-bottom: 40px;
+
+    .agerating {
+      padding: 5px 20px;
+      background-color: #ec0505;
+      max-width: 100px;
+      margin-right: 10px;
+      font-weight: 700;
+    }
+  }
 
   .peoplesegment {
     margin-top:40px;
