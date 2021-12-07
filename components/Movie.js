@@ -93,7 +93,7 @@ const Movie = ({ data, level }) => {
           </div>
           <div className={styles.genrelist}>
             {ageratings.map((item, index) => (
-              <div className={styles.genre}>
+              <div className={styles.agerating}>
                 {item.content.title}
               </div>
             ))}
