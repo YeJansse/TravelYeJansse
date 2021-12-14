@@ -11,11 +11,11 @@ const AgeRating = ({ data }) => {
         {/* <div className={[styles.movie, styles.test].join(' ')}> */}
         <div className={styles.agerating}>
           <h1 className={styles.title}>
-            {content.title}
+            {content.Title}
           </h1>
         </div>
         <div className={styles.description}>
-          {render(content.description)}
+          {render(content.Description)}
         </div>
       </main>
     </SbEditable>
