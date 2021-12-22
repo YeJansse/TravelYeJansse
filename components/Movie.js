@@ -48,9 +48,6 @@ const Movie = ({ data, level }) => {
     var writers = data.rels.filter(obj => {
       return content.writers.includes(obj.uuid);
     })
-    // var studios = data.rels.filter(obj => {
-    //   return content.studios.includes(obj.uuid);
-    // })
     var genres = data.rels.filter(obj => {
       return content.genres.includes(obj.uuid);
     })
@@ -85,14 +82,14 @@ const Movie = ({ data, level }) => {
             {content.title}
           </h1>
           <div className={styles.genrelist}>
-            {genres.map((item, index) => (
+            {genres.map((item) => (
               <div className={styles.genre}>
                 {item.content.title}
               </div>
             ))}
           </div>
           <div className={styles.ageratinglist}>
-            {ageratings.map((item, index) => (
+            {ageratings.map((item) => (
               <a href={'/$(item.full_slug}'} ><div 
               className={styles.agerating}>
                 {item.content.title}
