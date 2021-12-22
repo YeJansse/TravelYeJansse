@@ -48,9 +48,9 @@ const Movie = ({ data, level }) => {
     var writers = data.rels.filter(obj => {
       return content.writers.includes(obj.uuid);
     })
-    var studios = data.rels.filter(obj => {
-      return content.studios.includes(obj.uuid);
-    })
+    // var studios = data.rels.filter(obj => {
+    //   return content.studios.includes(obj.uuid);
+    // })
     var genres = data.rels.filter(obj => {
       return content.genres.includes(obj.uuid);
     })
