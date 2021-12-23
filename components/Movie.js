@@ -4,7 +4,6 @@ import { render } from "storyblok-rich-text-react-renderer"
 import styles from "../styles/Movie.module.scss"
 import { getData } from "../utils/storyblok"
 import RelatedItemGallerySmall from "./RelatedItemGallerySmall"
-import RelatedItemGallery from "./RelatedItemGallery"
 import InPageSlideshow from "./InPageSlideshow"
 import SmallCardList from "./SmallCardList"
 
