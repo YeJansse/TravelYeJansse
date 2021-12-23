@@ -92,7 +92,7 @@ const Movie = ({ data, level }) => {
             {ageratings.map((item) => (
               <a href={'/$(item.full_slug}'} ><div 
               className={styles.agerating}>
-                {item.content.title}
+                {item.content.Title}
               </div></a>
             ))}
           </div>
