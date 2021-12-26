@@ -4,7 +4,7 @@ import { render } from "storyblok-rich-text-react-renderer"
 import styles from "../styles/Movie.module.scss"
 import { getData } from "../utils/storyblok"
 import RelatedItemGallerySmall from "./RelatedItemGallerySmall"
-import RelatedItemGallery from "./RelatedItemGallery"
+// import RelatedItemGallery from "./RelatedItemGallery"
 import InPageSlideshow from "./InPageSlideshow"
 import SmallCardList from "./SmallCardList"
 
@@ -92,7 +92,7 @@ const Movie = ({ data, level }) => {
             {ageratings.map((item) => (
               <a href={'/$(item.full_slug}'} ><div 
               className={styles.agerating}>
-                {item.content.title}
+                {item.content.Title}
               </div></a>
             ))}
           </div>
