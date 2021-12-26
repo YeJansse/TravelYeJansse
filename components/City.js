@@ -1,0 +1,95 @@
+import React, { useState } from "react"
+import SbEditable from "storyblok-react"
+import { render } from "storyblok-rich-text-react-renderer"
+import styles from "../styles/City.module.scss"
+import { getData } from "../utils/storyblok"
+import RelatedItemGallerySmall from "./RelatedItemGallerySmall"
+import RelatedItemGallery from "./RelatedItemGallery"
+import InPageSlideshow from "./InPageSlideshow"
+import SmallCardList from "./SmallCardList"
+
+// const resolveDirectors = {
+//   en: 'Directors',
+//   nl: 'Regisseurs',
+// }
+
+
+const City = ({ data, level }) => {
+  var locale = 'en';
+  //enriching data
+  if (level === 'data') {
+    locale = data.story.lang;
+    var content = data.story.content;
+    var directors = data.rels.filter(obj => {
+      return content.directors.includes(obj.uuid);
+    });
+    var stars = data.rels.filter(obj => {
+      return content.stars.includes(obj.uuid);
+    });
+    var writers = data.rels.filter(obj => {
+      return content.writers.includes(obj.uuid);
+    })
+    var genres = data.rels.filter(obj => {
+      return content.genres.includes(obj.uuid);
+    })
+    var ageratings = data.rels.filter(obj => {
+      return content.agerating.includes(obj.uuid);
+    });
+  } else {
+    var content = data;
+  }
+
+  const [products, setProducts] = useState([]);
+  getData(data.story.uuid, locale, content.preview = false, 'product', 'movies').then(
+    function (result) {
+      setProducts(result.data.stories);
+    });
+
+  const [newsitems, setNewsitems] = useState([]);
+  getData(data.story.uuid, locale, content.preview = false, 'newsitem', 'movies').then(
+    function (result) {
+      setNewsitems(result.data.stories);
+    });
+
+  var pictures = content.pictures;
+
+  //returning the HTML
+  return (
+    <SbEditable content={content} key={content._uid}>
+      <main>
+        {/* <div className={[styles.movie, styles.test].join(' ')}> */}
+        <div className={styles.movie}>
+          <h1 className={styles.title}>
+            {content.title}
+          </h1>
+          <div className={styles.genrelist}>
+            {genres.map((item) => (
+              <div className={styles.genre}>
+                {item.content.title}
+              </div>
+            ))}
+
+          </div>
+          <div className={styles.synopsis}>
+            {render(content.description)}
+          </div>
+          <div className={styles.short}>
+            {render(content.population)}
+          </div>
+          <div className={styles.peoplesegment}>
+            <div className={styles.content}>
+              {directors && directors.length > 0 && <RelatedItemGallerySmall items={directors} title={resolveDirectors[locale]} type="personality"></RelatedItemGallerySmall>}
+              {writers && writers.length > 0 && <RelatedItemGallerySmall items={writers} title={resolveWriters[locale]} type="personality"></RelatedItemGallerySmall>}
+              {stars && stars.length > 0 && <RelatedItemGallerySmall items={stars} title={resolveStars[locale]} type="personality"></RelatedItemGallerySmall>}
+            </div>
+
+          </div>
+          {newsitems && newsitems.length > 0 && <SmallCardList items={newsitems} title={resolveNews[locale]} type="newsitem"></SmallCardList>}
+          {products && products.length > 0 && <SmallCardList items={products} title={resolveMerchandise[locale]} type="product"></SmallCardList>}
+        </div>
+      </main>
+    </SbEditable>
+  )
+}
+
+export default City
