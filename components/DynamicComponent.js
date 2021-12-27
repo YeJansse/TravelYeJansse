@@ -58,7 +58,6 @@ const Components = {
   'agerating':AgeRating,
   'city':City,
   'citylist':CityList
-  
 
 }
 
