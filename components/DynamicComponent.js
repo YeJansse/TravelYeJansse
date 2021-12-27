@@ -59,6 +59,7 @@ const Components = {
   'city':City,
   'citylist':CityList
 
+
 }
 
 
