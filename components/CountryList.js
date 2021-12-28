@@ -51,4 +51,4 @@ const CountryList = ({ data, level, locale }) => {
   );
 };
 
-export default MovieList;
+export default CountryList;
