@@ -13,17 +13,8 @@ const CountryList = ({ data, level, locale }) => {
   }
   const [sortby, setSortby] = useState();
 
-  function updateSortby(sortby){
-    setSortby(sortby);
-    getAllItems('movie', locale, sortby).then(
-      function (result) {
-        setItems(result.data.stories);
-      });
-  }
-  
-
   const [items, setItems] = useState([]);
-  getAllItems('movie', locale, sortby).then(
+  getAllItems('country', locale, sortby).then(
     function (result) {
       setItems(result.data.stories);
     });

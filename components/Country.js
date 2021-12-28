@@ -14,7 +14,7 @@ import SmallCardList from "./SmallCardList"
 // }
 
 
-const country = ({ data, level }) => {
+const Country = ({ data, level }) => {
   var locale = 'en';
   //enriching data
   if (level === 'data') {
@@ -68,7 +68,8 @@ const country = ({ data, level }) => {
                 {item.content.title}
               </div>
             ))}
-         
+          <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
+          </div>
           </div>
           <div className={styles.synopsis}>
             {render(content.description)}
@@ -92,5 +93,4 @@ const country = ({ data, level }) => {
   )
 }
 
-export default country
-
+export default Country
