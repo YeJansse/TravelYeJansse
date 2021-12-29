@@ -27,7 +27,7 @@ import TopMovies from './TopMovies'
 import AgeRating from './AgeRating'
 import City from './City'
 import CityList from './Citylist'
-import CountryList from './Countrylist'
+import CountryList from './CountryList'
 
 const Components = {
   'teaser': Teaser,
