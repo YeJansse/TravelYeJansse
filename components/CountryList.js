@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
-// import styles from "../styles/CountryList.module.scss"
+import styles from "../styles/CountryList.module.scss"
 import { getAllItems } from "../utils/storyblok"
 import SmallCardList from "./SmallCardList"
 
@@ -14,7 +14,7 @@ const CountryList = ({ data, level, locale }) => {
   const [sortby, setSortby] = useState();
 
   const [items, setItems] = useState([]);
-  getAllItems('Country', locale, sortby).then(
+  getAllItems('country', locale, sortby).then(
     function (result) {
       setItems(result.data.stories);
     });
