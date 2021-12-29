@@ -14,7 +14,7 @@ const CountryList = ({ data, level, locale }) => {
   const [sortby, setSortby] = useState();
 
   const [items, setItems] = useState([]);
-  getAllItems('Countr', locale, sortby).then(
+  getAllItems('Country', locale, sortby).then(
     function (result) {
       setItems(result.data.stories);
     });
