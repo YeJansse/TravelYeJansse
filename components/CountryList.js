@@ -1,9 +1,13 @@
-import React, { useState } from "react"
-import SbEditable from "storyblok-react"
-import { render } from "storyblok-rich-text-react-renderer"
-import styles from "../styles/CountryList.module.scss"
-import { getAllItems } from "../utils/storyblok"
-import SmallCardList from "./SmallCardList"
+const { useState } = require("react")
+const { render } = require("sass")
+const { default: SbEditable } = require("storyblok-react")
+
+Import React, { useState } from "react"
+Import SbEditable from "storyblok-react"
+Import { render } from "storyblok-rich-text-react-renderer"
+Import styles from "../styles/CountryList.module.scss"
+Import { getAllItems } from "../utils/storyblok"
+Import SmallCardList from "./SmallCardList"
 
 const CountryList = ({ data, level, locale }) => {
   if (level === 'data') {
@@ -13,21 +17,20 @@ const CountryList = ({ data, level, locale }) => {
   }
   const [sortby, setSortby] = useState();
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = setItems();
   getAllItems('country', locale, sortby).then(
     function (result) {
-      setItems(result.data.stories);
-    });
-
+      setItems(result.data.stories)
+    }
+  );
+  
   return (
     <div className={styles.list}>
       <div>
-        {items && items.length > 0 && <SmallCardList items={items} type="movie"></SmallCardList>}
+        {items && items.length > 0 && <SmallCardList items={items}
+        type="movie"></SmallCardList>}
       </div>
     </div>
-
   );
-};
 
-export default CountryList;
-
+  export default CountryList
