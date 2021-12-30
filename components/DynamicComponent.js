@@ -23,11 +23,12 @@ import Product from './Product'
 import EmailOptin from './EmailOptin'
 import TwoCol from './TwoCol'
 import Title from './Title'
-import TopMovies from './TopMovies'
+// import TopMovies from './TopMovies'
 import AgeRating from './AgeRating'
 import City from './City'
 import CityList from './Citylist'
 import CountryList from './CountryList'
+import TopCities from './TopCities'
 
 const Components = {
   'teaser': Teaser,
@@ -55,11 +56,12 @@ const Components = {
   'emailoptin':EmailOptin,
   'twocol':TwoCol,
   'title':Title,
-  'topmovies':TopMovies,
+  // 'topmovies':TopMovies,
   'agerating':AgeRating,
   'city':City,
   'citylist':CityList,
-  'countrylist':CountryList 
+  'countrylist':CountryList,
+  'topcities':TopCities,
 
 
 }
