@@ -77,6 +77,9 @@ const Country = ({ data, level }) => {
           <div className={styles.short}>
             {render(content.population)}
           </div>
+          <div className={styles.synopsis}>
+            {render(content.funfacts)}
+          </div>
           <div className={styles.peoplesegment}>
             <div className={styles.content}>
               {directors && directors.length > 0 && <RelatedItemGallerySmall items={directors} title={resolveDirectors[locale]} type="personality"></RelatedItemGallerySmall>}
