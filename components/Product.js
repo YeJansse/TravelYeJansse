@@ -63,7 +63,7 @@ const Product = ({ data, level }) => {
 
           </div>
           {movies && movies.length > 0 && <SmallCardList items={movies} title="Related Movies" type="movie"></SmallCardList>}
-          {personalities && personalities.length > 0 && <SmallCardList items={personalities} title="Related Stars" type="personality"></SmallCardList>}
+          {personalities && personalities.length > 0 && <SmallCardList items={personalities} title="Related cities" type="personality"></SmallCardList>}
         </div>
       </main>
     </SbEditable>
