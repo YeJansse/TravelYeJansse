@@ -74,8 +74,14 @@ const City = ({ data, level }) => {
           <div className={styles.synopsis}>
             {render(content.description)}
           </div>
-          <div className={styles.short}>
+          {/* <div className={styles.short}>
             {render(content.population)}
+          </div> */}
+          <div className={styles.short}>
+            {render(content.activities)}
+          </div>
+          <div className={styles.short}>
+            {render(content.transport)}
           </div>
           <div className={styles.peoplesegment}>
             <div className={styles.content}>
