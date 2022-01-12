@@ -9,7 +9,8 @@ import SmallCardList from "./SmallCardList"
 const NewsItem = ({ data, level }) => {
   var movies = [];
   var personalities = [];
-  var countries = [];
+  var countries = []; 
+  var cities = [];
   //enriching data
   if (level === 'data') {
     var content = data.story.content;
@@ -21,6 +22,9 @@ const NewsItem = ({ data, level }) => {
     });
     countries = data.rels.filter(obj => {
       return content.countries.includes(obj.uuid);
+    });
+    cities = data.rels.filter(obj => {
+      return content.cities.includes(obj.uuid);
     });
   } else {
     var content = data;
@@ -45,6 +49,7 @@ const NewsItem = ({ data, level }) => {
           {movies && movies.length > 0 && <SmallCardList items={movies} title="Related movies" type="movie"></SmallCardList>}
           {personalities && personalities.length > 0 && <SmallCardList items={personalities} title="Related personalities" type="personality"></SmallCardList>}
           {countries && countries.length > 0 && <SmallCardList items={countries} title="Related countries" type="country"></SmallCardList>}
+          {cities && cities.length > 0 && <SmallCardList items={cities} title="Related cities" type="city"></SmallCardList>}
       
         </div>
       </main>
