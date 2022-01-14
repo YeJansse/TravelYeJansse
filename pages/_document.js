@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
             s1.async=true;
-            s1.src='https://embed.tawk.to/61c5ba8380b2296cfdd3ad7d/1fnm614ng';
+            s1.src='https://embed.tawk.to/61e17163b84f7301d32b02b8/1fpca5rsl';
             s1.charset='UTF-8';
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);})();`,
